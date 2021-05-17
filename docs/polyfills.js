@@ -4315,8 +4315,8 @@ $({ target: 'Reflect', stat: true, sham: !FREEZING }, {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Floris\Desktop\test\falexandrou97.github.io\src\polyfills.ts */"hN/g");
-module.exports = __webpack_require__(/*! C:\Users\Floris\Desktop\test\falexandrou97.github.io\node_modules\@angular-devkit\build-angular\src\webpack\jit-polyfills.js */"rZy+");
+__webpack_require__(/*! C:\Users\Floris\Desktop\falexandrou97.github.io\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\Users\Floris\Desktop\falexandrou97.github.io\node_modules\@angular-devkit\build-angular\src\webpack\jit-polyfills.js */"rZy+");
 
 
 /***/ }),
