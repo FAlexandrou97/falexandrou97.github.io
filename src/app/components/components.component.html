@@ -28,14 +28,33 @@
                 <ngb-tabset [justify]="'center'">
                     <ngb-tab title="Education">
                         <ng-template ngbTabContent>
-                            <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a
-                                smooth metal surface that seamlessly meets the new Retina HD display.</p>
+                            <div class="container text-left">
+                                <div class="row">
+                                    <div class="col-2"></div>
+                                    <div class="col-2 pr-0"><img class="img-fluid" style="width: 150px"
+                                            src="assets/img/uclan.jpg"></div>
+                                    <div class="col-7 pl-0">
+                                        <span class="font-weight-bold">University of Central Lancashire (Cyprus)</span>
+                                        <br />
+                                        <span>BSc (Hons) Computing - First Class Honours</span> <br />
+                                        <span class="text-black-50">2017 - 2021</span> <br /> <br />
+                                        <span class="text-muted">Specialized in Software Engineering while having
+                                            working knowledge of Game Development and an understanding of Networking
+                                            technologies.</span> <br /> <br />
+                                        <div class="d-flex">
+                                            <span><strong>Thesis:</strong> Consumer and Retail Research Analytics Using
+                                                Natural Language Processing (Mercury NLQS) </span>
+                                            <i class="fa fa-eye fa-lg mt-2" role=button (click)="test()"
+                                                placement="bottom" ngbTooltip="View Project" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </ng-template>
                     </ngb-tab>
                     <ngb-tab title="Experience">
                         <ng-template ngbTabContent>
-                            <p>Here is your profile.</p>
 
                         </ng-template>
                     </ngb-tab>
@@ -68,7 +87,8 @@
                         <ngb-progressbar type="info" class="mt-0" [value]="50"><span class="h6 mb-0">Copying file <b>2
                                     of 4</b> ...</span></ngb-progressbar><br>
                         <ngb-progressbar type="warning" class="mt-0" [value]="75" [striped]="true" [animated]="true">
-                            <i>50%</i></ngb-progressbar><br>
+                            <i>50%</i>
+                        </ngb-progressbar><br>
                         <ngb-progressbar type="danger" class="mt-0" [value]="100" [striped]="true">Completed!
                         </ngb-progressbar>
 
