@@ -1,6 +1,6 @@
+import { AotSummaryResolver } from '@angular/compiler';
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-
 @Component({
     selector: 'app-components',
     templateUrl: './components.component.html',
@@ -42,4 +42,7 @@ export class ComponentsComponent implements OnInit {
         }
     }
 
+    goToLink(link: string) {
+        window.open(link, "_blank");
+    }
 }

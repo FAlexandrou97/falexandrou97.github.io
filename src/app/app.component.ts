@@ -5,6 +5,7 @@ import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/common';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import * as AOS from 'aos';
 
 @Component({
     selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent implements OnInit {
 
     constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
     ngOnInit() {
+        AOS.init();
+
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
             if (window.outerWidth > 991) {
