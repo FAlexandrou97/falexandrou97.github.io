@@ -1,14 +1,9 @@
-import { AotSummaryResolver } from '@angular/compiler';
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 @Component({
     selector: 'app-components',
     templateUrl: './components.component.html',
-    styles: [`
-    ngb-progressbar {
-        margin-top: 5rem;
-    }
-    `]
+    styleUrls: ['./components.component.scss']
 })
 
 export class ComponentsComponent implements OnInit {
@@ -19,7 +14,9 @@ export class ComponentsComponent implements OnInit {
     focus2;
     date: {year: number, month: number};
     model: NgbDateStruct;
-    constructor( private renderer : Renderer2) {}
+    zoomedImages: boolean[] = [];
+    numCards = 7;
+    constructor( private renderer : Renderer2, private elRef: ElementRef) {}
     isWeekend(date: NgbDateStruct) {
         const d = new Date(date.year, date.month - 1, date.day);
         return d.getDay() === 0 || d.getDay() === 6;
@@ -40,9 +37,30 @@ export class ComponentsComponent implements OnInit {
                 input_group[i].classList.remove('input-group-focus');
             });
         }
+
+        // Initialize zoomedImages
+        for (let i = 0; i < this.numCards; i++) this.zoomedImages.push(false);
     }
 
     goToLink(link: string) {
         window.open(link, "_blank");
+    }
+
+    zoomImage(imageIndex: number) {
+        let zoomableImages = this.elRef.nativeElement.getElementsByClassName("zoomable");
+        // Zoom in/out
+        if (this.zoomedImages[imageIndex]) {
+            zoomableImages[imageIndex].style.transform = "scale(1)";
+            this.zoomedImages[imageIndex] = false;
+            return;
+        }
+        zoomableImages[imageIndex].style.transform = "scale(2)";
+        this.zoomedImages[imageIndex] = true;
+
+        // Increase current card's z-index with the image so that other cards do not overlap with zoomed image
+        zoomableImages[imageIndex].style.position = "relative";
+        zoomableImages[imageIndex].style.zIndex = "3";
+        let cards = this.elRef.nativeElement.getElementsByClassName("card");
+        cards[imageIndex].style.zIndex = "2";
     }
 }

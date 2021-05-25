@@ -209,7 +209,7 @@
                                 <br /> <hr /> <br />
 
                                 
-                                <div class="row" data-aos="fade-left" data-aos-duration="750">
+                                <div class="row" data-aos="fade-right" data-aos-duration="750">
                                     <div class="col-2 pr-0"><img class="img-fluid" style="width: 150px"
                                             src="assets/img/national_guard.png"></div>
                                     <div class="col-xl-7 col-sm-12">
@@ -232,7 +232,56 @@
                     </ngb-tab>
                     <ngb-tab title="Projects">
                         <ng-template ngbTabContent>
-                            <p>Here are your messages.</p>
+                                <div class="card-columns">
+                                    <div class="card border rounded click-zoom mt-3 p-3" data-aos="zoom-in-up" data-aos-duration="750">
+                                        <input type="checkbox" [checked]="zoomedImages[0]">
+
+                                      <img src="assets/img/kenyan-food.png" class="img-fluid zoomable" (click)="zoomImage(0)">
+                                      <p class="font-weight-bold">Kaggle Competition: Kenyan food image classification </p>
+                                      <a class="nav-link" rel="tooltip" data-placement="bottom" href="https://github.com/FAlexandrou97/ImageClassification-13KenyanFood-PyTorch" target="_blank">
+                                        <i class="fa fa-github fa-2x"></i>
+                                        <p class="d-lg-none">GitHub</p>
+                                    </a>
+                                      <p>Built an image classifier using PyTorch and achieved 73.5% accuracy on the Kaggle test set</p>
+                                    </div>
+
+                                    <div class="card border rounded click-zoom mt-3 p-3" data-aos="zoom-in-up" data-aos-duration="750">
+                                        <input type="checkbox" [checked]="zoomedImages[1]">
+
+                                      <img src="assets/img/football-project.png" class="img-fluid zoomable" (click)="zoomImage(1)">
+                                      <p class="font-weight-bold">OpenCV combination of real-time object detection and tracking</p>
+                                      <a class="nav-link" rel="tooltip" data-placement="bottom" href="https://github.com/FAlexandrou97/OpenCV/tree/master/Python/Computer_Vision_1/Projects/Week10/Project4" target="_blank">
+                                        <i class="fa fa-github fa-2x"></i>
+                                        <p class="d-lg-none">GitHub</p>
+                                    </a>
+                                      <p>Used pre-trained detector and tracker, implemented logic to enhance robustness</p>
+                                    </div>
+                                    <div class="card border rounded mt-3" data-aos="zoom-in-up" data-aos-duration="750">
+                                        <img src="assets/img/cyi.jpg">
+                                      </div>
+                                    <div class="card border rounded mt-3" data-aos="zoom-in-up" data-aos-duration="750">
+                                      2
+                                      <img src="assets/img/fesb.png">
+                                    </div>
+                                    <div class="card border rounded mt-3" data-aos="zoom-in-up" data-aos-duration="750">
+                                      3
+                                      <img src="assets/img/cyi.jpg">
+                                    </div>
+                                  
+                                    <div class="card border rounded mt-3" data-aos="zoom-in-up" data-aos-duration="750">
+                                        2
+                                        <img src="assets/img/fesb.png">
+                                        <p>asdfsdfdsf sd fsdf sdf sd </p>
+                                        <p>asdfsdfdsf sd fsdf sdf sd </p>
+                                        <p>asdfsdfdsf sd fsdf sdf sd </p>
+                                      </div>
+                                    
+                                      <div class="card border rounded mt-3" data-aos="zoom-in-up" data-aos-duration="750">
+                                        1
+                                        <img src="assets/img/national_guard.png">
+                                      </div>
+                                  
+                                  </div>
                         </ng-template>
                     </ngb-tab>
                     <ngb-tab title="Other WIP">
