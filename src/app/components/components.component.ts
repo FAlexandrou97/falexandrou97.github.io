@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
     selector: 'app-components',
     templateUrl: './components.component.html',
@@ -48,10 +49,14 @@ export class ComponentsComponent implements OnInit {
 
     zoomImage(imageIndex: number) {
         let zoomableImages = this.elRef.nativeElement.getElementsByClassName("zoomable");
+        let cards = this.elRef.nativeElement.getElementsByClassName("card");
+
         // Zoom in/out
         if (this.zoomedImages[imageIndex]) {
             zoomableImages[imageIndex].style.transform = "scale(1)";
             this.zoomedImages[imageIndex] = false;
+            zoomableImages[imageIndex].style.zIndex = "1";
+            cards[imageIndex].style.zIndex = "1";
             return;
         }
         zoomableImages[imageIndex].style.transform = "scale(2)";
@@ -60,7 +65,6 @@ export class ComponentsComponent implements OnInit {
         // Increase current card's z-index with the image so that other cards do not overlap with zoomed image
         zoomableImages[imageIndex].style.position = "relative";
         zoomableImages[imageIndex].style.zIndex = "3";
-        let cards = this.elRef.nativeElement.getElementsByClassName("card");
         cards[imageIndex].style.zIndex = "2";
     }
 }
