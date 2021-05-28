@@ -25,7 +25,7 @@
     <div class="container">
         <div class="nav-tabs-navigation mb-5">
             <div class="nav-tabs-wrapper">
-                <ngb-tabset [justify]="'center'" (tabChange)="refreshAOS()">
+                <ngb-tabset [justify]="'center'">
                     <ngb-tab title="Education & Courses">
                         <ng-template ngbTabContent>
                             <div class="text-left overflow-hidden">
@@ -295,7 +295,7 @@
                                     data-aos-duration="750">
                                     <input type="checkbox" [checked]="zoomedImages[0]">
                                     <img src="assets/img/kenyan-food.png" class="img-fluid zoomable"
-                                        (click)="zoomImage(0)">
+                                        (click)="zoomImage(0)" (load)="imageLoaded()">
                                     <p class="font-weight-bold">Kaggle Competition: Kenyan food image classification
                                     </p>
                                     <a class="nav-link" rel="tooltip" data-placement="bottom"
@@ -312,7 +312,7 @@
                                     data-aos-duration="750">
                                     <input type="checkbox" [checked]="zoomedImages[1]">
                                     <img src="assets/img/football-project.png" class="img-fluid zoomable"
-                                        (click)="zoomImage(1)">
+                                        (click)="zoomImage(1)" (load)="imageLoaded()">
                                     <p class="font-weight-bold">OpenCV combination of real-time object detection and
                                         tracking</p>
                                     <a class="nav-link" rel="tooltip" data-placement="bottom"
@@ -329,7 +329,7 @@
                                     data-aos-duration="750">
                                     <input type="checkbox" [checked]="zoomedImages[2]">
                                     <img src="assets/img/frogger.png" style="height: 250px;" class="img-fluid zoomable"
-                                        (click)="zoomImage(2)">
+                                        (click)="zoomImage(2)" (load)="imageLoaded()">
                                     <p class="font-weight-bold">UCLan Cyprus Summer Hacker Challenge 2019: Remake of the
                                         arcade game Frogger in 2D</p>
                                     <a class="nav-link" rel="tooltip" data-placement="bottom"
@@ -347,7 +347,7 @@
                                 <div class="card border rounded click-zoom mt-2 p-3 overflow-auto" data-aos="zoom-in-up"
                                     data-aos-duration="750">
                                     <input type="checkbox" [checked]="zoomedImages[3]">
-                                    <img src="assets/img/android.png" class="img-fluid zoomable" (click)="zoomImage(3)">
+                                    <img src="assets/img/android.png" class="img-fluid zoomable" (click)="zoomImage(3)" (load)="imageLoaded()">
                                     <p class="font-weight-bold">Music Fans: Android Application</p>
                                     <a class="nav-link" rel="tooltip" data-placement="bottom"
                                         href="https://github.com/FAlexandrou97/CO2508/tree/master/FlorisAssignment"
@@ -366,7 +366,7 @@
                                     data-aos-duration="750">
                                     <input type="checkbox" [checked]="zoomedImages[4]">
                                     <img src="assets/img/interactive.png" class="img-fluid zoomable"
-                                        (click)="zoomImage(4)">
+                                        (click)="zoomImage(4)" (load)="imageLoaded()">
                                     <p class="font-weight-bold">SoundBound: Music Streaming Application
                                     </p>
                                     <a class="nav-link" rel="tooltip" data-placement="bottom"
@@ -384,7 +384,7 @@
                                 <div class="card border rounded click-zoom mt-2 p-3 overflow-auto" data-aos="zoom-in-up"
                                     data-aos-duration="750">
                                     <input type="checkbox" [checked]="zoomedImages[5]">
-                                    <img src="assets/img/graphics.png" class="img-fluid zoomable"
+                                    <img src="assets/img/graphics.png" class="img-fluid zoomable" (load)="imageLoaded()"
                                         (click)="zoomImage(5)">
                                     <p class="font-weight-bold">DirectX Computer Graphics Project</p>
                                     <a class="nav-link" rel="tooltip" data-placement="bottom"
@@ -401,7 +401,7 @@
                                 <div class="card border rounded click-zoom mt-2 p-3 overflow-auto" data-aos="zoom-in-up"
                                     data-aos-duration="750">
                                     <input type="checkbox" [checked]="zoomedImages[6]">
-                                    <img src="assets/img/ar.png" class="img-fluid zoomable" (click)="zoomImage(6)">
+                                    <img src="assets/img/ar.png" class="img-fluid zoomable" (click)="zoomImage(6)" (load)="imageLoaded()">
                                     <p class="font-weight-bold">wARzone: Augmented Reality Game For the Visually
                                         Impaired</p>
                                     <br />

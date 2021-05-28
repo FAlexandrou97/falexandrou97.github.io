@@ -18,16 +18,11 @@ export class ComponentsComponent implements OnInit {
     model: NgbDateStruct;
     zoomedImages: boolean[] = [];
     numCards = 7;
+    imagesLoaded = 0;
     constructor( private renderer : Renderer2, private elRef: ElementRef) {}
 
     ngOnInit() {
         AOS.init();
-    }
-
-    refreshAOS() {
-        setTimeout(() => {
-            AOS.refresh();
-        }, 100)
     }
 
     goToLink(link: string) {
@@ -53,5 +48,10 @@ export class ComponentsComponent implements OnInit {
         zoomableImages[imageIndex].style.position = "relative";
         zoomableImages[imageIndex].style.zIndex = "3";
         cards[imageIndex].style.zIndex = "2";
+    }
+
+    imageLoaded() { 
+        this.imagesLoaded += 1;
+        if (this.imagesLoaded == 7 ) AOS.refresh();
     }
 }
