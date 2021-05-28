@@ -25,7 +25,7 @@
     <div class="container">
         <div class="nav-tabs-navigation mb-5">
             <div class="nav-tabs-wrapper">
-                <ngb-tabset [justify]="'center'">
+                <ngb-tabset [justify]="'center'" (tabChange)="refreshAOS()">
                     <ngb-tab title="Education & Courses">
                         <ng-template ngbTabContent>
                             <div class="text-left overflow-hidden">
@@ -412,9 +412,30 @@
                             </div>
                         </ng-template>
                     </ngb-tab>
-                    <ngb-tab title="Other WIP">
+                    <ngb-tab title="Publications">
                         <ng-template ngbTabContent>
-                            <p>Here are your messages.</p>
+                            <div class="text-left overflow-hidden">
+                                <div class="row" data-aos="fade-up"  data-aos-anchor-placement="top-bottom">
+                                    <div class="col-10">
+                                        <span class="font-weight-bold">Detecting Underwater Sea Litter Using Deep Neural Networks: An Initial Study
+                                        </span>
+                                        <br />
+                                        <span class="text-black-50">09/2020 - IEEE</span> <br /> 
+                                        <span>Josip Musić, Stanko Kružić, Ivo Stančić, Floris Alexandrou</span> <br />
+                                    </div>
+                                    <div class="col-2">
+                                        <a class="nav-link" rel="tooltip" data-placement="bottom"
+                                        href="https://ieeexplore.ieee.org/document/9243709" target="_blank">
+                                        <i class="fa fa-external-link fa-lg"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Other">
+                        <ng-template ngbTabContent>
+                            <p>Work in progress...</p>
                         </ng-template>
                     </ngb-tab>
                 </ngb-tabset>

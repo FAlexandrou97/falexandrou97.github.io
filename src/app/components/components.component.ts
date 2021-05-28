@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import * as AOS from 'aos';
 
 @Component({
     selector: 'app-components',
@@ -18,29 +19,15 @@ export class ComponentsComponent implements OnInit {
     zoomedImages: boolean[] = [];
     numCards = 7;
     constructor( private renderer : Renderer2, private elRef: ElementRef) {}
-    isWeekend(date: NgbDateStruct) {
-        const d = new Date(date.year, date.month - 1, date.day);
-        return d.getDay() === 0 || d.getDay() === 6;
-    }
-
-    isDisabled(date: NgbDateStruct, current: {month: number}) {
-        return date.month !== current.month;
-    }
 
     ngOnInit() {
-        let input_group_focus = document.getElementsByClassName('form-control');
-        let input_group = document.getElementsByClassName('input-group');
-        for (let i = 0; i < input_group.length; i++) {
-            input_group[i].children[0].addEventListener('focus', function (){
-                input_group[i].classList.add('input-group-focus');
-            });
-            input_group[i].children[0].addEventListener('blur', function (){
-                input_group[i].classList.remove('input-group-focus');
-            });
-        }
+        AOS.init();
+    }
 
-        // Initialize zoomedImages
-        for (let i = 0; i < this.numCards; i++) this.zoomedImages.push(false);
+    refreshAOS() {
+        setTimeout(() => {
+            AOS.refresh();
+        }, 100)
     }
 
     goToLink(link: string) {
