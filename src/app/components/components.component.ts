@@ -52,6 +52,6 @@ export class ComponentsComponent implements OnInit {
 
     imageLoaded() { 
         this.imagesLoaded += 1;
-        if (this.imagesLoaded == 7 ) AOS.refresh();
+        if (this.imagesLoaded == this.numCards ) AOS.refresh();
     }
 }
